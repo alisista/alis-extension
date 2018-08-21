@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "ALIS HTML エディター",
+    "description": "このプラグインの名前"
+  },
+  "appDescription": {
+    "message": "ALISエディターのChrome拡張機能",
+    "description": "このプラグインの説明"
+  },
+  "htmlConvertBtnDefaultMessage": {
+    "message": "HTMLで入力する",
+    "description": "HTML切り替えボタンのデフォルトテキスト"
+  },
+  "htmlConvertBtnReturnMessage": {
+    "message": "元に戻す",
+    "description": "HTML切り替えボタンのテキスト"
+  }
+}
