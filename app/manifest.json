@@ -16,6 +16,7 @@
       ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
+        "scripts/utils.js",
         "scripts/contentscript.js"
       ],
       "css": [
