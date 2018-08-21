@@ -39,3 +39,7 @@ function formatFactory(html) {
 
   return parse(html.replace(/(\r\n|\n|\r)/gm, ' ').replace(/ +(?= )/g, ''));
 }
+
+function isArticleEditPage(href) {
+  return href.match(/me\/articles\/new|me\/articles\/draft\/.*\/edit|me\/articles\/public\/.*\/edit/);
+}
