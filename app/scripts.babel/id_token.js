@@ -7,8 +7,8 @@ $(function () {
 
   $idTokenBtn.on('click', function () {
     let name = localStorage.getItem('CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.LastAuthUser'),
-      id_token = localStorage.getItem(`CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.${name}.idToken`);
-    $idTokenInput.val(id_token);
+      idToken = localStorage.getItem(`CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.${name}.idToken`);
+    $idTokenInput.val(idToken);
     $idTokenInput.select();
     document.execCommand('copy');
     alert('copied id token');
