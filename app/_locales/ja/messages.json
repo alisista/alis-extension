@@ -14,5 +14,9 @@
   "htmlConvertBtnReturnMessage": {
     "message": "元に戻す",
     "description": "HTML切り替えボタンのテキスト"
+  },
+  "idTokenBtnDefaultMessage": {
+    "message": "IdToken取得",
+    "description": "IDトークン取得ボタン"
   }
 }

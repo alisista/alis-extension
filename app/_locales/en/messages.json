@@ -14,5 +14,9 @@
   "htmlConvertBtnReturnMessage": {
     "message": "Return to ALIS Editor",
     "description": "return message of html convert button"
+  },
+  "idTokenBtnDefaultMessage": {
+    "message": "Get Id Token",
+    "description": "default message of get id token button"
   }
 }

@@ -18,7 +18,8 @@
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
         "scripts/utils.js",
-        "scripts/contentscript.js"
+        "scripts/html_editor.js",
+        "scripts/id_token.js"
       ],
       "css": [
         "styles/main.css"
