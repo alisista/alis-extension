@@ -34,10 +34,10 @@ $(function () {
     }
     switchFlg = !switchFlg;
   });
-
   let $htmlConvertDiv = $('<div>').addClass('html-convert-btn').append($htmlConvertBtn);
-  $('body').append($htmlConvertDiv);
-
+  if (isArticleEditPage(location.href)) {
+    $('body').append($htmlConvertDiv);
+  }
   let href = location.href,
     observer = new MutationObserver(function (mutations) {
       let currentHref = location.href;

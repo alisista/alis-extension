@@ -11,9 +11,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://alis.to/me/articles/new",
-        "https://alis.to/me/articles/draft/*/edit",
-        "https://alis.to/me/articles/public/*/edit"
+        "https://alis.to/*"
       ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
