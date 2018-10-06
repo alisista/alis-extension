@@ -7,7 +7,7 @@ $(function () {
 
   $idTokenBtn.on('click', function () {
     let name = localStorage.getItem('CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.LastAuthUser'),
-      id_token = localStorage.getItem('CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.' + name + '.idToken');
+      id_token = localStorage.getItem(`CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.${name}.idToken`);
     $idTokenInput.val(id_token);
     $idTokenInput.select();
     document.execCommand('copy');
