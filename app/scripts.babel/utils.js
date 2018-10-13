@@ -43,3 +43,11 @@ function formatFactory(html) {
 function isArticleEditPage(href) {
   return href.match(/me\/articles\/new|me\/articles\/draft\/.*\/edit|me\/articles\/public\/.*\/edit/);
 }
+
+// 記事のページ判定
+function isArticlePage(href) {
+ var chksite = href.match(/alis.to\/.*\/articles\/[A-Za-z0-9]{12}/);
+  
+return chksite;
+ 
+}

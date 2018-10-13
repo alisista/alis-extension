@@ -18,5 +18,12 @@
   "idTokenBtnDefaultMessage": {
     "message": "Get Id Token",
     "description": "default message of get id token button"
+  },
+  "tipExtBtnDefaultMessage":{
+    "message": "Tip Num",
+    "description": "default message of tip extention"
+  },
+  "tipExtBtnReturnMessage":{
+    "message": "Return to ALIS mode"
   }
 }
