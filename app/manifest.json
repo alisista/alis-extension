@@ -1,7 +1,7 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
-  "manifest_version": 2,
+  "version": "0.0.2",
+  "manifest_version": 3,
   "description": "__MSG_appDescription__",
   "icons": {
     "16": "images/icon-16.png",
@@ -17,7 +17,8 @@
         "bower_components/jquery/dist/jquery.min.js",
         "scripts/utils.js",
         "scripts/html_editor.js",
-        "scripts/id_token.js"
+        "scripts/id_token.js",
+        "scripts/tip_extention.js"
       ],
       "css": [
         "styles/main.css"

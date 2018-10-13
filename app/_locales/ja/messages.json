@@ -18,5 +18,13 @@
   "idTokenBtnDefaultMessage": {
     "message": "IdToken取得",
     "description": "IDトークン取得ボタン"
+  },
+  "tipExtBtnDefaultMessage":{
+    "message": "tip Num",
+    "description": "ハッカー部モード"
+  },
+  "tipExtBtnReturnMessage":{
+    "message": "元に戻す",
+    "description": "ALISの基本モード"
   }
 }
