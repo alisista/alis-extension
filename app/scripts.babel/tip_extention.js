@@ -1,27 +1,25 @@
 'use strict';
 
 $(function () {
-
-  // 変数宣言　
-      let tipExtBtnDefaultText = chrome.i18n.getMessage('tipExtBtnDefaultMessage');
-      let $tipExtBtn = $('<button>').addClass('tip-ext-btn-txt').text(tipExtBtnDefaultText);
-      let $tipInputField =$('<textarea>').addClass('tip-ext-input');
-      let $tipExtGo =$('<button>').addClass('tip-ext-go-txt').text("確認");
+　        
+      let  tipBtnFlag = false,  // ボタンのオンオフの状態フラグ
+           tipExtBtnDefaultText = chrome.i18n.getMessage('tipExtBtnDefaultMessage'),
+           $tipExtBtn = $('<button>').addClass('tip-ext-btn-txt').text(tipExtBtnDefaultText);
      
- 
- $tipExtBtn.on('click',function(){
+// 投げ銭ボタンを推した時のアクション
+$tipExtBtn.on('click',function(){
 
-  let currenthref2 = location.href;
-  let name = localStorage.getItem('CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.LastAuthUser');
-  let idToken = localStorage.getItem(`CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.${name}.idToken`);
-  let urlsend = "https://alis.to/api/me/wallet/tip";
-  let articleN = currenthref2.slice(-12);
-  let AlisValueN =0;
+  let currenthref2 = location.href,
+      name = localStorage.getItem('CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.LastAuthUser'),
+      idToken = localStorage.getItem(`CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.${name}.idToken`),
+      urlsend = "https://alis.to/api/me/wallet/tip",
+      articleN = currenthref2.slice(-12),
+      AlisValueN =0;
 
-  // 投げ銭ALISの入力ポップアップ
+  //ポップアップウインドウを出して数値を聞く
   let alisValueInput = window.prompt("投げ銭するALISの量を入れてください。マイナス１８桁まで行けます。現在、1ALISまでに限定しています", "0.01");
 　 
-  //数値判定
+  //入力された数値判定
    if (isNaN(alisValueInput)){
     alert('10以下の半角数値を入力ください');
     return;
@@ -34,7 +32,7 @@ $(function () {
     AlisValueN = 10;
   }
   if(AlisValueN == 0){
-    alert('0.000000000000000001以上の半角数値を入力ください');
+    alert('10以下　0.000000000000000001以上の半角数値を入力ください');
     return;
   }
 
@@ -45,12 +43,12 @@ $(function () {
 
   if(window.confirm(tipConfTxt)){    
     
-    var data = {
+    let data = {
       'article_id': articleN,
       'tip_value': tipValue
     };
 
-    var headersx = {
+    let headersx = {
       'Authorization': idToken
     };
 
@@ -81,24 +79,22 @@ $(function () {
 
 //カスタムチップ機能ボタンを設置。記事のサイトの時のみON
 let $tipExtDiv = $('<div>').addClass('tip-ext-btn').append($tipExtBtn); //ボタンの準備
-console.log("check address1");
 if (isArticlePage(location.href)) { 
      $('body').append($tipExtDiv); //記事のページ判定をしボタンの設置
+     tipBtnFlag = true;
    }
-
+// web address の変化を監視しページのチェックを行う
   let href = location.href,
     observer = new MutationObserver(function (mutations) {
       let currentHref3 = location.href;
       if (href !== currentHref3) {
-        console.log("check address2");
         if (!isArticlePage(currentHref3)) {
-          console.log("check page type and no article");
           $tipExtDiv.remove();
+          tipBtnFlag = false;
+        }else if(isArticlePage(currentHref3) && !tipBtnFlag){
+          $('body').append($tipExtDiv); 
+          tipBtnFlag =true;
         }
-        // else if(isArticlePage(currentHref3)){
-        //   console.log("check page type and it is article");
-        //   $('body').append($tipExtDiv); 
-        // }
       }
     });
 
