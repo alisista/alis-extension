@@ -17,7 +17,7 @@ $(function () {
 
   let $idTokenBtnDiv = $('<div>').addClass('id-token-btn')
     .append($idTokenBtn);
-    
+
   $('body')
     .append($idTokenBtnDiv)
     .append($idTokenInput);
