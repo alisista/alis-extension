@@ -64,21 +64,14 @@ $(function() {
     .addClass('tip-btn')
     .append($tipExtBtn)
   $('body').append($tipExtDiv)
-  if (!alisEx.isArticlePage(location.href)) {
-    $tipExtDiv.addClass('hidden')
-  }
   // web address の変化を監視しページのチェックを行う
-  let href = location.href,
-    observer = new MutationObserver(function(mutations) {
-      let currentHref = location.href
-      if (href !== currentHref) {
-        if (!alisEx.isArticlePage(currentHref)) {
-          $tipExtDiv.addClass('hidden')
-        } else {
-          $tipExtDiv.removeClass('hidden')
-        }
-      }
-    })
+  let observer = new MutationObserver(function(mutations) {
+    if (!alisEx.isArticlePage(location.href)) {
+      $tipExtDiv.addClass('hidden')
+    } else {
+      $tipExtDiv.removeClass('hidden')
+    }
+  })
 
   observer.observe(document, { childList: true, subtree: true })
 })
