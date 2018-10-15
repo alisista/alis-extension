@@ -12,7 +12,7 @@ chrome://extensions/
 ```
 $ npm i
 $ bower i
-$ gulp watch
+$ npx gulp watch
 ```
 
 ## Local Install
