@@ -47,3 +47,28 @@
   text-decoration: none;
   padding: 10px;
 }
+
+.tip-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 60px;
+}
+
+.tip-btn-txt {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: linear-gradient(314.72deg, #232538, #858dda);
+  border-radius: 4px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  grid-area: new-article;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px;
+}

@@ -2,7 +2,7 @@
 
 $(function() {
   let $tipExtBtn = $('<button>')
-    .addClass('tip-ext-btn-txt')
+    .addClass('tip-btn-txt')
     .text(chrome.i18n.getMessage('tipExtBtnDefaultMessage'))
 
   // 投げ銭ボタンを推した時のアクション
@@ -47,14 +47,12 @@ $(function() {
           console.log('textStatus     : ' + textStatus)
           console.log('errorThrown    : ' + errorThrown.message)
         })
-        .always(function() {
-        })
     }
   })
 
   //カスタムチップ機能ボタンを設置。記事のサイトの時のみON
   let $tipExtDiv = $('<div>')
-    .addClass('tip-ext-btn')
+    .addClass('tip-btn')
     .append($tipExtBtn) //ボタンの準備
   if (alisEx.isArticlePage(location.href)) {
     $('body').append($tipExtDiv) //記事のページ判定をしボタンの設置
