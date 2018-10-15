@@ -5,14 +5,12 @@ chrome://extensions/
 ## Prerequisites
 
 + node
-+ bower
 
 ## Setup
 
 ```
 $ npm i
-$ bower i
-$ npx gulp watch
+$ npm run start
 ```
 
 ## Local Install

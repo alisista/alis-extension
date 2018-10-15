@@ -15,6 +15,10 @@
     "message": "元に戻す",
     "description": "HTML切り替えボタンのテキスト"
   },
+  "tipExtBtnDefaultMessage":{
+    "message": "Tip Num",
+    "description": "投げ銭"
+  },
   "idTokenBtnDefaultMessage": {
     "message": "IdTokenコピー",
     "description": "IDトークンコピーボタン"
