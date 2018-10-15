@@ -9,6 +9,8 @@ chrome://extensions/
 ## Setup
 
 ```
+$ git clone https://github.com/alisista/alis-extension
+$ cd alis-extension
 $ npm i
 $ npm run start
 ```
