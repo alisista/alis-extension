@@ -1,7 +1,7 @@
 'use strict';
 
 $(function () {
-  var $idTokenBtn = $('<button>').addClass('id-token-btn-txt').text(chrome.i18n.getMessage('idTokenBtnDefaultMessage')),
+  var $idTokenBtn = $('<button>').addClass('btn-txt').text(chrome.i18n.getMessage('idTokenBtnDefaultMessage')),
       $idTokenInput = $('<input>').attr({ type: 'text' });
 
   $idTokenBtn.on('click', function () {
