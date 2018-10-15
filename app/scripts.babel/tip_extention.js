@@ -1,104 +1,74 @@
-'use strict';
+'use strict'
 
-$(function () {
-
-  let tipBtnFlag = false,  // ボタンのオンオフの状態フラグ
-    tipExtBtnDefaultText = chrome.i18n.getMessage('tipExtBtnDefaultMessage'),
-    $tipExtBtn = $('<button>').addClass('tip-ext-btn-txt').text(tipExtBtnDefaultText);
+$(function() {
+  let $tipExtBtn = $('<button>')
+    .addClass('tip-ext-btn-txt')
+    .text(chrome.i18n.getMessage('tipExtBtnDefaultMessage'))
 
   // 投げ銭ボタンを推した時のアクション
-  $tipExtBtn.on('click', function () {
-
-    let currenthref2 = location.href,
-      name = localStorage.getItem('CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.LastAuthUser'),
-      idToken = localStorage.getItem(`CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.${name}.idToken`),
-      urlsend = 'https://alis.to/api/me/wallet/tip',
-      articleN = currenthref2.slice(-12),
-      AlisValueN = 0;
-
+  $tipExtBtn.on('click', function() {
     //ポップアップウインドウを出して数値を聞く
-    let alisValueInput = window.prompt('投げ銭するALISの量を入れてください。マイナス１８桁まで行けます。現在、1ALISまでに限定しています', '0.01');
-
+    let tipInput = window.prompt(
+      '投げ銭するALISの量を入れてください。マイナス１８桁まで行けます。現在、10ALISまでに限定しています',
+      '0.01'
+    )
     //入力された数値判定
-    if (isNaN(alisValueInput)) {
-      alert('10以下の半角数値を入力ください');
-      return;
+    if (!tipInput) {
+      alert('10以下の半角数値を入力ください')
+      return
     }
-
     //数値化
-    AlisValueN = Number(alisValueInput);
-
-    if (AlisValueN > 10) {
-      AlisValueN = 10;
+    let tip = Number(tipInput)
+    if (tip > 10 || tip < 0.000000000000000001) {
+      alert('10以下もしくは0.000000000000000001以上の半角数値を入力ください')
+      return
     }
-    if (AlisValueN == 0) {
-      alert('10以下　0.000000000000000001以上の半角数値を入力ください');
-      return;
-    }
-
-    let tipConfTxt = String(AlisValueN) + ' ALISを送付します。OKですね？';
-
-    let tipValue = AlisValueN * 1000000000000000000;
-
-
-    if (window.confirm(tipConfTxt)) {
-
+    if (window.confirm(`${tip} ALISを送付します。OKですね？`)) {
       let data = {
-        'article_id': articleN,
-        'tip_value': tipValue
-      };
-
-      let headersx = {
-        'Authorization': idToken
-      };
-
+        article_id: location.href.match(/articles\/([a-zA-Z0-9]{12})/)[1],
+        tip_value: tip
+      }
       $.ajax({
         type: 'POST',
         timeout: 3000,
-        url: urlsend,
-        headers: headersx,
+        url: 'https://alis.to/api/me/wallet/tip',
+        headers: {
+          Authorization: alisEx.getIdToken()
+        },
         data: JSON.stringify(data),
         contentType: 'application/json;charset=UTF-8',
-        dataType: 'text',
+        dataType: 'text'
       })
-
-        .done(function (data) {
-          alert('送信に成功しました');
+        .done(function(data) {
+          alert('送信に成功しました')
         })
-        .fail(function (jqXHR, textStatus, errorThrown) {
-          console.log('XMLHttpRequest : ' + XMLHttpRequest.status);
-          console.log('textStatus     : ' + textStatus);
-          console.log('errorThrown    : ' + errorThrown.message);
+        .fail(function(jqXHR, textStatus, errorThrown) {
+          console.log('XMLHttpRequest : ' + XMLHttpRequest.status)
+          console.log('textStatus     : ' + textStatus)
+          console.log('errorThrown    : ' + errorThrown.message)
         })
-        .always(function () {
-
+        .always(function() {
         })
-
     }
-  });
-
+  })
 
   //カスタムチップ機能ボタンを設置。記事のサイトの時のみON
-  let $tipExtDiv = $('<div>').addClass('tip-ext-btn').append($tipExtBtn); //ボタンの準備
-  if (isArticlePage(location.href)) {
-    $('body').append($tipExtDiv); //記事のページ判定をしボタンの設置
-    tipBtnFlag = true;
+  let $tipExtDiv = $('<div>')
+    .addClass('tip-ext-btn')
+    .append($tipExtBtn) //ボタンの準備
+  if (alisEx.isArticlePage(location.href)) {
+    $('body').append($tipExtDiv) //記事のページ判定をしボタンの設置
   }
   // web address の変化を監視しページのチェックを行う
   let href = location.href,
-    observer = new MutationObserver(function (mutations) {
-      let currentHref3 = location.href;
-      if (href !== currentHref3) {
-        if (!isArticlePage(currentHref3)) {
-          $tipExtDiv.remove();
-          tipBtnFlag = false;
-        } else if (isArticlePage(currentHref3) && !tipBtnFlag) {
-          $('body').append($tipExtDiv);
-          tipBtnFlag = true;
+    observer = new MutationObserver(function(mutations) {
+      let currentHref = location.href
+      if (href !== currentHref) {
+        if (!alisEx.isArticlePage(currentHref)) {
+          $tipExtDiv.remove()
         }
       }
-    });
+    })
 
-  observer.observe(document, {childList: true, subtree: true});
-});
-
+  observer.observe(document, { childList: true, subtree: true })
+})
