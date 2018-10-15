@@ -1,12 +1,12 @@
 'use strict'
 
 $(function() {
-  let $tipExtBtn = $('<button>')
-    .addClass('btn-txt')
+  let $tipExtMenu = $('<a>')
+    .addClass('alis-extension-menu hidden')
     .text(chrome.i18n.getMessage('tipExtBtnDefaultMessage'))
 
   // 投げ銭ボタンを推した時のアクション
-  $tipExtBtn.on('click', async function() {
+  $tipExtMenu.on('click', async function() {
     const { value: tip } = await swal({
       title: '投げ銭するALISの量を入れてください',
       input: 'text',
@@ -59,16 +59,15 @@ $(function() {
     }
   })
 
-  //カスタムチップ機能ボタンを設置。記事のサイトの時のみON
-  let $tipExtDiv = $('<div>')
-    .addClass('tip-btn hidden')
-    .append($tipExtBtn)
-  $('body').append($tipExtDiv)
+  //カスタムチップ機能ボタンを設置
+  $('#alis-extension').append($tipExtMenu)
+
   // web address の変化を監視しページのチェックを行う
-  let observer = new MutationObserver(() => {
-    !alisEx.isArticlePage(location.href)
-      ? $tipExtDiv.addClass('hidden')
-      : $tipExtDiv.removeClass('hidden')
-  })
+  let observer = new MutationObserver(
+    () =>
+      !alisEx.isArticlePage(location.href)
+        ? $tipExtMenu.addClass('hidden')
+        : $tipExtMenu.removeClass('hidden')
+  )
   observer.observe(document, { childList: true, subtree: true })
 })

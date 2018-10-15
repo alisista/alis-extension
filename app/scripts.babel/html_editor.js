@@ -6,11 +6,11 @@ $(function() {
     htmlConvertBtnDefaultText = chrome.i18n.getMessage(
       'htmlConvertBtnDefaultMessage'
     ),
-    $htmlConvertBtn = $('<button>')
-      .addClass('btn-txt')
+    $htmlConvertMenu = $('<a>')
+      .addClass('alis-extension-menu hidden')
       .text(htmlConvertBtnDefaultText)
 
-  $htmlConvertBtn.on('click', function() {
+  $htmlConvertMenu.on('click', function() {
     let $areaBody = $('.area-body')
     if (switchFlg) {
       let $htmlTextarea = $(`#${alisHtmlEditorId}`)
@@ -19,7 +19,7 @@ $(function() {
       $htmlTextarea.remove()
       $areaBody.css({ display: '' })
 
-      $htmlConvertBtn.text(htmlConvertBtnDefaultText)
+      $htmlConvertMenu.text(htmlConvertBtnDefaultText)
     } else {
       $areaBody.find('.medium-insert-buttons').remove()
       $areaBody.find('.medium-insert-active').remove()
@@ -34,20 +34,18 @@ $(function() {
         .val(alisEx.formatFactory($areaBody.html()))
       $areaBody.after($htmlTextarea)
 
-      $htmlConvertBtn.text(
+      $htmlConvertMenu.text(
         chrome.i18n.getMessage('htmlConvertBtnReturnMessage')
       )
     }
     switchFlg = !switchFlg
   })
-  let $htmlConvertDiv = $('<div>')
-    .addClass('html-convert-btn hidden')
-    .append($htmlConvertBtn)
-  $('body').append($htmlConvertDiv)
-  let observer = new MutationObserver(() => {
-    !alisEx.isArticleEditPage(location.href)
-      ? $htmlConvertDiv.addClass('hidden')
-      : $htmlConvertDiv.removeClass('hidden')
-  })
+  $('#alis-extension').append($htmlConvertMenu)
+  let observer = new MutationObserver(
+    () =>
+      !alisEx.isArticleEditPage(location.href)
+        ? $htmlConvertMenu.addClass('hidden')
+        : $htmlConvertMenu.removeClass('hidden')
+  )
   observer.observe(document, { childList: true, subtree: true })
 })
