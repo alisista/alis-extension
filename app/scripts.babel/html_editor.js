@@ -44,12 +44,10 @@ $(function() {
     .addClass('html-convert-btn hidden')
     .append($htmlConvertBtn)
   $('body').append($htmlConvertDiv)
-  let observer = new MutationObserver(function(mutations) {
-    if (!alisEx.isArticleEditPage(location.href)) {
-      $htmlConvertDiv.addClass('hidden')
-    } else {
-      $htmlConvertDiv.removeClass('hidden')
-    }
+  let observer = new MutationObserver(() => {
+    !alisEx.isArticleEditPage(location.href)
+      ? $htmlConvertDiv.addClass('hidden')
+      : $htmlConvertDiv.removeClass('hidden')
   })
   observer.observe(document, { childList: true, subtree: true })
 })

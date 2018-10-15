@@ -65,12 +65,10 @@ $(function() {
     .append($tipExtBtn)
   $('body').append($tipExtDiv)
   // web address の変化を監視しページのチェックを行う
-  let observer = new MutationObserver(function(mutations) {
-    if (!alisEx.isArticlePage(location.href)) {
-      $tipExtDiv.addClass('hidden')
-    } else {
-      $tipExtDiv.removeClass('hidden')
-    }
+  let observer = new MutationObserver(() => {
+    !alisEx.isArticlePage(location.href)
+      ? $tipExtDiv.addClass('hidden')
+      : $tipExtDiv.removeClass('hidden')
   })
   observer.observe(document, { childList: true, subtree: true })
 })
