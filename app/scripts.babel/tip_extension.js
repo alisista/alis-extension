@@ -33,7 +33,7 @@ $(function() {
       if (result) {
         let data = {
           article_id: location.href.match(/articles\/([a-zA-Z0-9]{12})/)[1],
-          tip_value: Number(tip)
+          tip_value: Number(tip) * 1000000000000000000
         }
         let response = await fetch('https://alis.to/api/me/wallet/tip', {
           method: 'POST',
@@ -72,9 +72,9 @@ $(function() {
       let currentHref = location.href
       if (href !== currentHref) {
         if (!alisEx.isArticlePage(currentHref)) {
-          $tipExtDiv.addClass('hidden');
+          $tipExtDiv.addClass('hidden')
         } else {
-          $tipExtDiv.removeClass('hidden');
+          $tipExtDiv.removeClass('hidden')
         }
       }
     })
