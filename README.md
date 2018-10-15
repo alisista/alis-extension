@@ -15,4 +15,4 @@ $ npm run start
 
 ## Local Install
 
-After execute `gulp watch` , add `app` directory to chrome://extensions/
+After execute `npm run start` , add `app` directory to chrome://extensions/
