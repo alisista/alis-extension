@@ -61,13 +61,6 @@ $(function() {
 
   //カスタムチップ機能ボタンを設置
   $('#alis-extension').append($tipExtMenu)
-
   // web address の変化を監視しページのチェックを行う
-  let observer = new MutationObserver(
-    () =>
-      !alisEx.isArticlePage(location.href)
-        ? $tipExtMenu.addClass('hidden')
-        : $tipExtMenu.removeClass('hidden')
-  )
-  observer.observe(document, { childList: true, subtree: true })
+  alisEx.observeMenu(alisEx.isArticlePage, $tipExtMenu)
 })
