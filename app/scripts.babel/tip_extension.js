@@ -62,9 +62,10 @@ $(function() {
   //カスタムチップ機能ボタンを設置。記事のサイトの時のみON
   let $tipExtDiv = $('<div>')
     .addClass('tip-btn')
-    .append($tipExtBtn) //ボタンの準備
-  if (alisEx.isArticlePage(location.href)) {
-    $('body').append($tipExtDiv) //記事のページ判定をしボタンの設置
+    .append($tipExtBtn)
+  $('body').append($tipExtDiv)
+  if (!alisEx.isArticlePage(location.href)) {
+    $tipExtDiv.addClass('hidden')
   }
   // web address の変化を監視しページのチェックを行う
   let href = location.href,
