@@ -14,8 +14,8 @@
         "https://alis.to/*"
       ],
       "js": [
-        "bower_components/jquery/dist/jquery.min.js",
-        "bower_components/sweetalert2/dist/sweetalert2.all.min.js",
+        "libraries/jquery/dist/jquery.min.js",
+        "libraries/sweetalert2/dist/sweetalert2.all.min.js",
         "scripts/utils.js",
         "scripts/main.js",
         "scripts/html_editor.js",
@@ -23,7 +23,7 @@
         "scripts/tip_extension.js"
       ],
       "css": [
-        "bower_components/sweetalert2/dist/sweetalert2.min.css",
+        "libraries/sweetalert2/dist/sweetalert2.min.css",
         "styles/main.css"
       ]
     }
