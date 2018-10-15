@@ -5,7 +5,8 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "start": "npx gulp-cli watch"
+    "start": "npm run format && npx gulp-cli watch",
+    "format": "npx prettier --write app/scripts.babel/*.js"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",

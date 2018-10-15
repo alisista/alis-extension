@@ -17,7 +17,9 @@ $(function() {
       $areaBody.empty()
       $areaBody.append($htmlTextarea.val())
       $htmlTextarea.remove()
-      $areaBody.css({ display: '' })
+      $areaBody.css({
+        display: ''
+      })
 
       $htmlConvertMenu.text(htmlConvertBtnDefaultText)
     } else {
