@@ -41,11 +41,5 @@ $(function() {
     switchFlg = !switchFlg
   })
   $('#alis-extension').append($htmlConvertMenu)
-  let observer = new MutationObserver(
-    () =>
-      !alisEx.isArticleEditPage(location.href)
-        ? $htmlConvertMenu.addClass('hidden')
-        : $htmlConvertMenu.removeClass('hidden')
-  )
-  observer.observe(document, { childList: true, subtree: true })
+  alisEx.observeMenu(alisEx.isArticleEditPage, $htmlConvertMenu)
 })

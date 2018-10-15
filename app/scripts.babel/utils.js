@@ -72,5 +72,15 @@ const alisEx = {
     return localStorage.getItem(
       `CognitoIdentityServiceProvider.2gri5iuukve302i4ghclh6p5rg.${name}.idToken`
     )
+  },
+
+  observeMenu: (isPageFn, $menu) => {
+    let observer = new MutationObserver(
+      () =>
+        !isPageFn(location.href)
+          ? $menu.addClass('hidden')
+          : $menu.removeClass('hidden')
+    )
+    observer.observe(document, { childList: true, subtree: true })
   }
 }

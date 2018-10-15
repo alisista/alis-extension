@@ -1,14 +1,14 @@
 {
   "appName": {
-    "message": "alis html editor",
+    "message": "ALIS Chrome Extension",
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "alis editor with HTML",
+    "message": "ALIS Chrom Extension",
     "description": "The description of the application"
   },
   "htmlConvertBtnDefaultMessage": {
-    "message": "Edit with HTML",
+    "message": "Convert to HTML",
     "description": "default message of html convert button"
   },
   "htmlConvertBtnReturnMessage": {
