@@ -1,11 +1,11 @@
 'use strict'
 
 $(function() {
-  let $idTokenBtn = $('<button>')
-    .addClass('btn-txt')
+  let $idTokenMenu = $('<a>')
+    .addClass('alis-extension-menu')
     .text(chrome.i18n.getMessage('idTokenBtnDefaultMessage'))
 
-  $idTokenBtn.on('click', function() {
+  $idTokenMenu.on('click', function() {
     let $idTokenInput = $('<input>').attr({ type: 'text' })
     $('body').append($idTokenInput)
     $idTokenInput.val(alisEx.getIdToken())
@@ -18,9 +18,5 @@ $(function() {
     $idTokenInput.remove()
   })
 
-  let $idTokenBtnDiv = $('<div>')
-    .addClass('id-token-btn')
-    .append($idTokenBtn)
-
-  $('body').append($idTokenBtnDiv)
+  $('#alis-extension').append($idTokenMenu)
 })
