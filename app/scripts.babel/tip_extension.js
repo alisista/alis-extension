@@ -61,7 +61,7 @@ $(function() {
 
   //カスタムチップ機能ボタンを設置。記事のサイトの時のみON
   let $tipExtDiv = $('<div>')
-    .addClass('tip-btn')
+    .addClass('tip-btn hidden')
     .append($tipExtBtn)
   $('body').append($tipExtDiv)
   // web address の変化を監視しページのチェックを行う
@@ -72,6 +72,5 @@ $(function() {
       $tipExtDiv.removeClass('hidden')
     }
   })
-
   observer.observe(document, { childList: true, subtree: true })
 })

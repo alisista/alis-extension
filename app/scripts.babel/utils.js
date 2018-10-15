@@ -1,6 +1,5 @@
 const alisEx = {
-
-  formatFactory: (html) => {
+  formatFactory: html => {
     const parse = (_html, tab = 0) => {
       let html = $.parseHTML(_html),
         formatHtml = String()
@@ -55,14 +54,14 @@ const alisEx = {
     return parse(html.replace(/(\r\n|\n|\r)/gm, ' ').replace(/ +(?= )/g, ''))
   },
 
-  isArticleEditPage: (href) => {
+  isArticleEditPage: href => {
     return href.match(
       /me\/articles\/new|me\/articles\/draft\/.*\/edit|me\/articles\/public\/.*\/edit/
     )
   },
 
   // 記事のページ判定
-  isArticlePage: (href) => {
+  isArticlePage: href => {
     return href.match(/alis.to\/.*\/articles\/[a-zA-Z0-9]{12}/)
   },
 
