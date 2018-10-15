@@ -17,6 +17,7 @@
         "bower_components/jquery/dist/jquery.min.js",
         "bower_components/sweetalert2/dist/sweetalert2.all.min.js",
         "scripts/utils.js",
+        "scripts/main.js",
         "scripts/html_editor.js",
         "scripts/id_token.js",
         "scripts/tip_extension.js"

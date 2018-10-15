@@ -41,20 +41,15 @@ $(function() {
     switchFlg = !switchFlg
   })
   let $htmlConvertDiv = $('<div>')
-    .addClass('html-convert-btn')
+    .addClass('html-convert-btn hidden')
     .append($htmlConvertBtn)
-  if (alisEx.isArticleEditPage(location.href)) {
-    $('body').append($htmlConvertDiv)
-  }
-  let href = location.href,
-    observer = new MutationObserver(function(mutations) {
-      let currentHref = location.href
-      if (href !== currentHref) {
-        if (!alisEx.isArticleEditPage(currentHref)) {
-          $htmlConvertDiv.remove()
-        }
-      }
-    })
-
+  $('body').append($htmlConvertDiv)
+  let observer = new MutationObserver(function(mutations) {
+    if (!alisEx.isArticleEditPage(location.href)) {
+      $htmlConvertDiv.addClass('hidden')
+    } else {
+      $htmlConvertDiv.removeClass('hidden')
+    }
+  })
   observer.observe(document, { childList: true, subtree: true })
 })
