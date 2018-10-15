@@ -2,7 +2,7 @@
 
 $(function() {
   let $idTokenBtn = $('<button>')
-      .addClass('id-token-btn-txt')
+      .addClass('btn-txt')
       .text(chrome.i18n.getMessage('idTokenBtnDefaultMessage')),
     $idTokenInput = $('<input>').attr({ type: 'text' })
 

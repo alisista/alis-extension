@@ -1,7 +1,7 @@
 'use strict';
 
 $(function () {
-  var $tipExtBtn = $('<button>').addClass('tip-btn-txt').text(chrome.i18n.getMessage('tipExtBtnDefaultMessage'));
+  var $tipExtBtn = $('<button>').addClass('btn-txt').text(chrome.i18n.getMessage('tipExtBtnDefaultMessage'));
 
   // 投げ銭ボタンを推した時のアクション
   $tipExtBtn.on('click', function () {

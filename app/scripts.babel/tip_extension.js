@@ -2,7 +2,7 @@
 
 $(function() {
   let $tipExtBtn = $('<button>')
-    .addClass('tip-btn-txt')
+    .addClass('btn-txt')
     .text(chrome.i18n.getMessage('tipExtBtnDefaultMessage'))
 
   // 投げ銭ボタンを推した時のアクション

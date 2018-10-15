@@ -7,7 +7,7 @@ $(function() {
       'htmlConvertBtnDefaultMessage'
     ),
     $htmlConvertBtn = $('<button>')
-      .addClass('html-convert-btn-txt')
+      .addClass('btn-txt')
       .text(htmlConvertBtnDefaultText)
 
   $htmlConvertBtn.on('click', function() {

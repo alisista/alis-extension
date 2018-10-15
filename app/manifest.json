@@ -18,7 +18,7 @@
         "scripts/utils.js",
         "scripts/html_editor.js",
         "scripts/id_token.js",
-        "scripts/tip_extention.js"
+        "scripts/tip_extension.js"
       ],
       "css": [
         "styles/main.css"
