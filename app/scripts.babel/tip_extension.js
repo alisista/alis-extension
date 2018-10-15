@@ -35,32 +35,26 @@ $(function() {
           article_id: location.href.match(/articles\/([a-zA-Z0-9]{12})/)[1],
           tip_value: Number(tip)
         }
-        $.ajax({
-          type: 'POST',
-          timeout: 3000,
-          url: 'https://alis.to/api/me/wallet/tip',
+        let response = await fetch('https://alis.to/api/me/wallet/tip', {
+          method: 'POST',
           headers: {
+            'Content-Type': 'application/json;charset=UTF-8',
             Authorization: alisEx.getIdToken()
           },
-          data: JSON.stringify(data),
-          contentType: 'application/json;charset=UTF-8',
-          dataType: 'text'
+          body: JSON.stringify(data)
         })
-          .done(function(data) {
-            swal({
-              type: 'success',
-              text: '送信に成功しました'
-            })
+        if (response.ok) {
+          swal({
+            type: 'success',
+            text: '送信に成功しました'
           })
-          .fail(function(jqXHR, textStatus, errorThrown) {
-            console.log('XMLHttpRequest : ' + XMLHttpRequest.status)
-            console.log('textStatus     : ' + textStatus)
-            console.log('errorThrown    : ' + errorThrown.message)
-            swal({
-              type: 'error',
-              text: '送信に失敗しました'
-            })
+        } else {
+          console.dir(response)
+          swal({
+            type: 'error',
+            text: '送信に失敗しました'
           })
+        }
       }
     }
   })
@@ -78,7 +72,9 @@ $(function() {
       let currentHref = location.href
       if (href !== currentHref) {
         if (!alisEx.isArticlePage(currentHref)) {
-          $tipExtDiv.remove()
+          $tipExtDiv.addClass('hidden');
+        } else {
+          $tipExtDiv.removeClass('hidden');
         }
       }
     })
