@@ -25,6 +25,8 @@ jobs:
       - run:
           name: Deploy
           command: |
+            git config --global user.email "you@example.com"
+            git config --global user.name "bot"
             npm run deploy
       - save_cache:
           key: npm-cache-v1-{{ .Branch }}-{{ checksum "./package.json" }}
