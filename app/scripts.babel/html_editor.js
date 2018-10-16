@@ -1,6 +1,6 @@
 'use strict'
 
-$(function() {
+$(() => {
   let switchFlg = false,
     alisHtmlEditorId = 'alis-html-editor',
     htmlConvertBtnDefaultText = chrome.i18n.getMessage(
@@ -10,7 +10,7 @@ $(function() {
       .addClass('alis-extension-menu hidden')
       .text(htmlConvertBtnDefaultText)
 
-  $htmlConvertMenu.on('click', function() {
+  $htmlConvertMenu.on('click', () => {
     let $areaBody = $('.area-body')
     if (switchFlg) {
       let $htmlTextarea = $(`#${alisHtmlEditorId}`)

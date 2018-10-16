@@ -82,5 +82,10 @@ const alisEx = {
           : $menu.removeClass('hidden')
     )
     observer.observe(document, { childList: true, subtree: true })
+  },
+
+  observe: fn => {
+    let observer = new MutationObserver(() => fn())
+    observer.observe(document, { childList: true, subtree: true })
   }
 }
