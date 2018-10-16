@@ -1,0 +1,29 @@
+{
+  "appName": {
+    "message": "ALIS Chrome Extension",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "ALIS Chrom Extension",
+    "description": "The description of the application"
+  },
+  "htmlConvertBtnDefaultMessage": {
+    "message": "Convert to HTML",
+    "description": "default message of html convert button"
+  },
+  "htmlConvertBtnReturnMessage": {
+    "message": "Return to ALIS Editor",
+    "description": "return message of html convert button"
+  },
+  "idTokenBtnDefaultMessage": {
+    "message": "Copy Id Token",
+    "description": "default message of get id token button"
+  },
+  "tipExtBtnDefaultMessage":{
+    "message": "Tip Num",
+    "description": "default message of tip extension"
+  },
+  "tipExtBtnReturnMessage":{
+    "message": "Return to ALIS mode"
+  }
+}

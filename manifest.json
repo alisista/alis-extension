@@ -1,0 +1,32 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.0.2",
+  "manifest_version": 3,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "ja",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://alis.to/*"
+      ],
+      "js": [
+        "libraries/jquery.min.js",
+        "libraries/sweetalert2.all.min.js",
+        "scripts/utils.js",
+        "scripts/main.js",
+        "scripts/html_editor.js",
+        "scripts/id_token.js",
+        "scripts/tip_extension.js"
+      ],
+      "css": [
+        "libraries/sweetalert2.min.css",
+        "styles/main.css"
+      ]
+    }
+  ],
+  "permissions": []
+}

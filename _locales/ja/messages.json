@@ -1,0 +1,26 @@
+{
+  "appName": {
+    "message": "ALIS Chrome拡張",
+    "description": "このプラグインの名前"
+  },
+  "appDescription": {
+    "message": "ALISのChrome拡張機能",
+    "description": "このプラグインの説明"
+  },
+  "htmlConvertBtnDefaultMessage": {
+    "message": "HTMLで入力する",
+    "description": "HTML切り替えボタンのデフォルトテキスト"
+  },
+  "htmlConvertBtnReturnMessage": {
+    "message": "元に戻す",
+    "description": "HTML切り替えボタンのテキスト"
+  },
+  "tipExtBtnDefaultMessage":{
+    "message": "Tip Num",
+    "description": "投げ銭"
+  },
+  "idTokenBtnDefaultMessage": {
+    "message": "IdTokenコピー",
+    "description": "IDトークンコピーボタン"
+  }
+}
