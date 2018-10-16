@@ -62,5 +62,12 @@ var alisEx = {
       return !isPageFn(location.href) ? $menu.addClass('hidden') : $menu.removeClass('hidden');
     });
     observer.observe(document, { childList: true, subtree: true });
+  },
+
+  observe: function observe(fn) {
+    var observer = new MutationObserver(function () {
+      return fn();
+    });
+    observer.observe(document, { childList: true, subtree: true });
   }
 };
