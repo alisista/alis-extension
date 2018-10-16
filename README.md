@@ -18,3 +18,9 @@ $ npm run start
 ## Local Install
 
 After execute `npm run start` , add `app` directory to chrome://extensions/
+
+## Deploy
+
+```
+$ npm run deploy
+```
