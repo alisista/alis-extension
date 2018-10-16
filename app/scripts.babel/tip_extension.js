@@ -1,6 +1,6 @@
 'use strict'
 
-$(function() {
+$(() => {
   let $tipExtMenu = $('<a>')
     .addClass('alis-extension-menu hidden')
     .text(chrome.i18n.getMessage('tipExtBtnDefaultMessage'))

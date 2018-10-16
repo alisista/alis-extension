@@ -25,3 +25,27 @@
 .hidden {
   display: none;
 }
+
+.bubble-wrap {
+  position: fixed;
+  bottom: -13em;
+  padding: 3em;
+}
+
+.bubble {
+  border-radius: 5em;
+  box-shadow: 1px 1px 7px hsla(0, 0%, 80%, 0.7);
+  height: 8em;
+  width: 8em;
+  cursor: pointer;
+  background-size: cover;
+}
+
+.explosion {
+  color: #000000;
+  position: fixed;
+  transform-origin: center;
+  font-family: "Tillana", sans-serif;
+  font-weight: 700;
+  font-size: 20pt;
+}

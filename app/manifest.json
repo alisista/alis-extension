@@ -16,11 +16,13 @@
       "js": [
         "libraries/jquery.min.js",
         "libraries/sweetalert2.all.min.js",
+        "libraries/just-animate-all.min.js",
         "scripts/utils.js",
         "scripts/main.js",
         "scripts/html_editor.js",
         "scripts/id_token.js",
-        "scripts/tip_extension.js"
+        "scripts/tip_extension.js",
+        "scripts/like_extension.js"
       ],
       "css": [
         "libraries/sweetalert2.min.css",
