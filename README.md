@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/alisista/alis-extension/tree/master.svg?style=svg)](https://circleci.com/gh/alisista/alis-extension/tree/master)
+
 ## Chrome Extension
 
 chrome://extensions/
