@@ -25,5 +25,8 @@
   },
   "tipExtBtnReturnMessage":{
     "message": "Return to ALIS mode"
+  },
+  "linkExtBtnDefaultMessage": {
+    "message": "Developer's page"
   }
 }
