@@ -8,7 +8,7 @@ $(() => {
   // 投げ銭ボタンを推した時のアクション
   $tipExtMenu.on('click', async function() {
     const { value: tip } = await swal({
-      title: '投げ銭するALIS',
+      title: '投げ銭する100',
       input: 'text',
       inputAttributes: {
         autocapitalize: 'off'
