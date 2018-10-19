@@ -4,6 +4,6 @@ $(() => {
   $('body').append(
     $('<div>')
       .attr({ id: 'alis-extension' })
-      .addClass('alis-extension-list')
+      .addClass('alis-extension-list')     
   )
 })
