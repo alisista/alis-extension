@@ -22,7 +22,8 @@
         "scripts/html_editor.js",
         "scripts/id_token.js",
         "scripts/tip_extension.js",
-        "scripts/like_extension.js"
+        "scripts/like_extension.js",
+	"scripts/link_menu.js"
       ],
       "css": [
         "libraries/sweetalert2.min.css",
