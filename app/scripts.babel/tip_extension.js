@@ -1,20 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @yuuki100 Sign out
-2
-0 0 alisista/alis-extension
- Code  Issues 6  Pull requests 1  Projects 1  Wiki  Insights
-alis-extension/app/scripts.babel/tip_extension.js
-034dbf8  3 days ago
-@yukihirai0505 yukihirai0505 Add like extension (#5)
-     
-67 lines (62 sloc)  1.97 KB
 'use strict'
 
 $(() => {
@@ -81,16 +64,3 @@ $(() => {
   // web address の変化を監視しページのチェックを行う
   alisEx.observeMenu(alisEx.isArticlePage, $tipExtMenu)
 })
-c 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
