@@ -25,5 +25,14 @@
   },
   "tipExtBtnReturnMessage":{
     "message": "Return to ALIS mode"
+  },
+  "linkExtBtnDefaultMessage": {
+    "message": "Developer's page"
+  },
+  "ALISlinkExtBtnDefaultMessage1": {
+    "message": "ALL popular"
+  },
+  "ALISlinkExtBtnDefaultMessage2": {
+    "message": "ALL recent"
   }
 }

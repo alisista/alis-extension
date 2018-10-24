@@ -15,12 +15,24 @@
     "message": "元に戻す",
     "description": "HTML切り替えボタンのテキスト"
   },
-  "tipExtBtnDefaultMessage":{
+  "tipExtBtnDefaultMessage": {
     "message": "Tip Num",
     "description": "投げ銭"
   },
   "idTokenBtnDefaultMessage": {
     "message": "IdTokenコピー",
     "description": "IDトークンコピーボタン"
+  },
+  "linkExtBtnDefaultMessage": {
+    "message": "開発者のページ",
+    "description": "開発者のページへのリンク"
+  },
+  "ALISlinkExtBtnDefaultMessage1": {
+    "message": "全人気記事",
+    "description": "ALISの全人気記事を表示"
+  },
+  "ALISlinkExtBtnDefaultMessage2": {
+    "message": "全新着記事",
+    "description": "ALISの全新着記事を表示"
   }
 }
