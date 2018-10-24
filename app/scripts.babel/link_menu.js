@@ -6,7 +6,7 @@ $(() => {
     .html(
       '<a href="https://github.com/alisista/alis-extension/wiki">' +
         chrome.i18n.getMessage('linkExtBtnDefaultMessage') +
-        '"</a>'
+        '</a>'
     )
 
   $('#alis-extension-link').append($linkExtMenu)
