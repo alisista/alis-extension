@@ -34,5 +34,9 @@
   },
   "ALISlinkExtBtnDefaultMessage2": {
     "message": "ALL recent"
+  },
+  "ALISTagRecomBtnDefaultMessage": {
+    "message": "Tag recommendation",
+    "description": "Recommend tag based on your article"
   }
 }
