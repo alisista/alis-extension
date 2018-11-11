@@ -104,3 +104,20 @@
   font-weight: 700;
   font-size: 20pt;
 }
+
+.tag-btn {
+    display: inline-block;
+    position: relative;
+    padding: 0.25em 0.5em;
+    background: #fff;
+    border-radius: 4px;
+    border: 1.5px solid #99a2ff;
+    color: #99a2ff;
+    cursor: pointer;
+    width: 160px;
+}
+
+ .tag-btn:hover {
+    background: #99a2ff;
+    color: #fff;
+}

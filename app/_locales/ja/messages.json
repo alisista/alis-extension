@@ -34,5 +34,9 @@
   "ALISlinkExtBtnDefaultMessage2": {
     "message": "全新着記事",
     "description": "ALISの全新着記事を表示"
+  },
+  "ALISTagRecomBtnDefaultMessage": {
+    "message": "タグレコメンド",
+    "description": "記事内容からタグを自動設定"
   }
 }
